@@ -41,11 +41,11 @@ class Bomber:
                 "Content-Type": "application/json"
 	         }
 	        try:
-	             request = requests.post(url, data = json.dumps( {"mobileNumber":+self.user_mobile}) , headers=zepto_header,proxies={ 'https' : self.getproxy()})
+	                request = requests.post(url, data = json.dumps( {"mobileNumber":+self.user_mobile}) , headers=zepto_header,proxies={ 'https' : self.getproxy()})
                 except:
-   	             return False
+   	                return False
  	        if(request.status_code ==  200 ):
-                     return True
+                        return True
 	
 	def flipkart(self):
 		url = "https://rome.api.flipkart.com/api/7/user/otp/generate"
